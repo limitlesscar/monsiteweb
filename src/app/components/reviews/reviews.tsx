@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl"
+
 const testimonials = [
   
     {
-      body: 'Un service rapide, pratique et fiable. Grâce à limitless, j\'ai pu réserver une voiture en quelques minutes seulement.',
+      body: 'Un service rapide, pratique et fiable Grâce à limitless, j\'ai pu réserver une voiture en quelques minutes seulement',
       author: {
         name: 'Claire Martin',
         handle: 'clairemartin',
@@ -11,7 +13,7 @@ const testimonials = [
     },
    
     {
-      body: 'Une expérience sans tracas ! Les véhicules sont toujours propres et disponibles. limitless a totalement changé ma façon de voyager.',
+      body: 'Une expérience sans tracas ! Les véhicules sont toujours propres et disponibles limitless a totalement changé ma façon de voyager',
       author: {
         name: 'Sophie Dufresne',
         handle: 'sophiedufresne',
@@ -20,7 +22,7 @@ const testimonials = [
       },
     },
     {
-      body: 'J\'ai réservé une voiture pour un week-end et le service a été exceptionnel. Une interface facile à utiliser et un service client réactif.',
+      body: 'J\'ai réservé une voiture pour un week-end et le service a été exceptionnel Une interface facile à utiliser et un service client réactif',
       author: {
         name: 'Lucien Bernard',
         handle: 'lucienbernard',
@@ -29,7 +31,7 @@ const testimonials = [
       },
     },
     {
-      body: 'Louer une voiture n\'a jamais été aussi simple et rapide. Merci limitless pour ce service de qualité !',
+      body: 'Louer une voiture n\'a jamais été aussi simple et rapide Merci limitless pour ce service de qualité !',
       author: {
         name: 'Julie Thibault',
         handle: 'julie_thibault',
@@ -38,7 +40,7 @@ const testimonials = [
       },
     },
     {
-      body: 'J\'adore utiliser limitless! Le choix des véhicules est vaste, et tout est très bien organisé. Je ne louerai plus jamais autrement.',
+      body: 'J\'adore utiliser limitless! Le choix des véhicules est vaste, et tout est très bien organisé Je ne louerai plus jamais autrement',
       author: {
         name: 'Pierre Moreau',
         handle: 'pierremoreau',
@@ -47,7 +49,7 @@ const testimonials = [
       },
     },
     {
-      body: 'L\'application est intuitive et l\'assistance client est top. Si vous avez besoin d\'une voiture, limitless est la solution idéale.',
+      body: 'L\'application est intuitive et l\'assistance client est top Si vous avez besoin d\'une voiture, limitless est la solution idéale',
       author: {
         name: 'Emilie Dubois',
         handle: 'emiliedubois',
@@ -58,13 +60,14 @@ const testimonials = [
   ]
   
   export default function Reviews() {
+    const t= useTranslations('homePage')
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-base/7 font-semibold text-black-600">Témoignages</h2>
+            <h2 className="text-base/7 font-semibold text-black-600">{t('Témoignages')}</h2>
             <p className="mt-2 text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Nous avons travaillé avec des milliers de personnes formidables
+             {t('Nous avons travaillé avec des milliers de personnes formidables')}
             </p>
           </div>
           <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
@@ -73,7 +76,7 @@ const testimonials = [
                 <div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
                   <figure className="rounded-2xl bg-gray-50 p-8 text-sm/6">
                     <blockquote className="text-gray-900">
-                      <p>{`“${testimonial.body}”`}</p>
+                      <p>{t(`“${testimonial.body}”`)}</p>
                     </blockquote>
                     <figcaption className="mt-6 flex items-center gap-x-4">
                       <img alt="" src={testimonial.author.imageUrl} className="size-10 rounded-full bg-gray-50" />

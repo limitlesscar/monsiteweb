@@ -6,6 +6,7 @@ import screenFive from '@/app/components/imagesiphone/screenshotfive.png';
 import screenSix from '@/app/components/imagesiphone/screensix.png';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function BoxSecond() {
   useEffect(() => {
@@ -40,40 +41,40 @@ export default function BoxSecond() {
     {
       title: 'Gérez vos annonces',
       description:
-        'Ajoutez, modifiez ou supprimez vos annonces pour mieux gérer vos locations.',
+        'Ajoutez, modifiez ou supprimez vos annonces pour mieux gérer vos locations',
       buttonText: 'Gérez vos annonces',
       image: screenOne,
     },
     {
       title: 'Suivez vos réservations',
       description:
-        'Consultez et gérez vos réservations avec un tableau de bord simple et intuitif.',
+        'Consultez et gérez vos réservations avec un tableau de bord simple et intuitif',
       buttonText: 'Voir vos réservations',
       image: screenTwo,
     },
     {
       title: 'Communiquez avec vos clients',
       description:
-        'Utilisez notre système de messagerie pour rester en contact avec vos clients.',
+        'Utilisez notre système de messagerie pour rester en contact avec vos clients',
       buttonText: 'Envoyez un message',
       image: screenThree,
     },
     {
       title: 'Recevez des avis',
       description:
-        'Collectez des retours pour améliorer vos services et attirer plus de clients.',
+        'Collectez des retours pour améliorer vos services et attirer plus de clients',
       buttonText: 'Voir les avis',
       image: screenFour,
     },
     {
       title: 'Gérez vos documents',
       description:
-        'Téléchargez et organisez vos documents importants en toute sécurité.',
+        'Téléchargez et organisez vos documents importants en toute sécurité',
       buttonText: 'Gérez vos documents',
       image: screenFive,
     },
   ];
-
+const t = useTranslations('newPage')
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-screen-xl px-6 lg:px-8">
@@ -94,13 +95,13 @@ export default function BoxSecond() {
               />
             </div>
             <div>
-              <h2 className="text-base font-semibold text-black-600">{feature.title}</h2>
-              <p className="mt-6 text-lg text-gray-600">{feature.description}</p>
+              <h2 className="text-base font-semibold text-black-600">{t(feature.title)}</h2>
+              <p className="mt-6 text-lg text-gray-600">{t(feature.description)}</p>
               <a
                 href="#"
                 className="mt-10 inline-block rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                {feature.buttonText}
+                {t(feature.buttonText)}
               </a>
             </div>
           </div>
