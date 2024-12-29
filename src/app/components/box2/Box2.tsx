@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
 export default function Box2() {
@@ -6,6 +7,7 @@ export default function Box2() {
   const navigateToNew = () => {
     router.push('/new');
   };
+  const t = useTranslations('homePage')
     return (
       <div className="relative bg-white">
         <div className="relative h-80 overflow-hidden md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
@@ -19,13 +21,13 @@ export default function Box2() {
           <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
            
             <p className="mt-2 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
-            Louez des voitures pour toutes les occasions
+            {t('Louez des voitures pour toutes les occasions')}
 
 
 
             </p>
             <p className="mt-6 text-base text-gray-600">
-            Explorez une incroyable sélection de voitures, des plus communes aux plus extraordinaires.
+            {t('Explorez une incroyable sélection de voitures, des plus communes aux plus extraordinaires')}
 
             </p>
             <div className="mt-8">
@@ -36,7 +38,7 @@ export default function Box2() {
              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 
              active:bg-blue-500 active:border active:border-blue-600"
 >
-  Explorer
+  {t('Explorer')}
 </button>
 
             </div>

@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Navsearch from './navsearch';
 import Footer from '../footer';
 import { useRouter } from 'next/navigation';  // Import useRouter
+import { useTranslations } from 'next-intl';
+import LocaleSwitcher from '../localeSwitcher/LocaleSwitcher';
 
 const navigation = [
   { name: 'Location de voiture', href: '/' },
@@ -24,7 +26,7 @@ export default function NavCenter() {
   const handleNavigate = () => {
     router.push('/new');  // Navigate to the '/new' page
   };
-
+const t = useTranslations("homePage")
   return (
     <div>
       <header className="bg-white">
@@ -33,7 +35,7 @@ export default function NavCenter() {
             <div className="hidden lg:flex lg:gap-x-12">
               {navigation.map((item) => (
                 <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
-                  {item.name}
+                  {t(item.name)}
                 </a>
               ))}
             </div>
@@ -52,7 +54,10 @@ export default function NavCenter() {
             <span className="sr-only">Your Company</span>
             <Image src={logoblack} alt="Logo" className="h-8 w-auto" width={52} height={52} />
           </a>
-          <div className="flex flex-1 justify-end"></div>
+         
+          <div className="flex flex-1 justify-end">
+          <LocaleSwitcher removePadding removeMargin/>
+          </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-10" />
@@ -85,7 +90,7 @@ export default function NavCenter() {
                   href={item.href}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  {item.name}
+                  {t(item.name)}
                 </a>
               ))}
             </div>

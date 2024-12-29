@@ -6,6 +6,7 @@ import screenFive from '@/app/components/imagesiphone/screenshotfive.png';
 import screenSix from '@/app/components/imagesiphone/screensix.png';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 
 
@@ -45,44 +46,44 @@ export default function Boxone() {
   const featuresOne = [
     {
       description:
-        'Gérez vos réservations et vos commandes. Consultez et modifiez vos réservations en toute simplicité depuis votre tableau de bord.',
+        'Gérez vos réservations et vos commandes Consultez et modifiez vos réservations en toute simplicité depuis votre tableau de bord',
     },
   ];
 
   const featuresTwo = [
     {
       description:
-        'Réservez une voiture proche de chez vous. Trouvez des voitures à proximité et choisissez parmi les meilleurs modèles.',
+        'featuresTwo',
     },
   ];
 
   const featuresThree = [
     {
-      description: 'Trouvez des voitures autour de vous sur une carte interactive.',
+      description: 'Trouvez des voitures autour de vous sur une carte interactive',
     },
   ];
 
   const featuresFour = [
     {
       description:
-        'Discutez facilement avec les propriétaires des voitures via notre système de messagerie intégré.',
+        'Discutez facilement avec les propriétaires des voitures via notre système de messagerie intégré',
     },
   ];
 
   const featuresFive = [
     {
       description:
-        'Notez votre expérience et partagez vos retours pour aider la communauté limitless à s’améliorer.',
+        'Notez votre expérience et partagez vos retours pour aider la communauté limitless à s’améliorer',
     },
   ];
 
   const featuresSix = [
     {
       description:
-        'Modifiez et envoyez vos documents officiels, comme votre permis de conduire et votre pièce d’identité, en toute sécurité.',
+        'Modifiez et envoyez vos documents officiels, comme votre permis de conduire et votre pièce d’identité, en toute sécurité',
     },
   ];
-
+const t = useTranslations('homePage')
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-screen-xl px-6 lg:px-8">
@@ -93,20 +94,20 @@ export default function Boxone() {
         <div className="mx-auto max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-16 sm:gap-y-20">
           <div className="lg:order-2">
             <h2 className="text-base font-semibold text-black-600">
-              Réservez une voiture proche de chez vous
+              {t('Réservez une voiture proche de chez vous')}
             </h2>
             <p className="mt-6 text-lg text-gray-600">
-              Trouvez des voitures à proximité et choisissez parmi les meilleurs modèles.
+              {t('Trouvez des voitures à proximité et choisissez parmi les meilleurs modèles')}
             </p>
             <dl className="mt-10 space-y-8 text-base text-gray-600">
               {featuresTwo.map((feature, index) => (
                 <div key={index}>
-                  <dd className="mb-12">{feature.description}</dd>
+                  <dd className="mb-12">{t(feature.description)}</dd>
                   <a
                     href="#"
                     className="rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
-                   Réservez une voiture 
+                   {t('Réservez une voiture')} 
                   </a>
                 </div>
               ))}
@@ -127,20 +128,20 @@ export default function Boxone() {
         <div className="mx-auto max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-16 sm:gap-y-20">
           <div>
             <h2 className="text-base font-semibold text-black-600">
-              Trouvez des voitures autour de vous sur la carte
+              {t('Trouvez des voitures autour de vous sur la carte')}
             </h2>
             <p className="mt-6 text-lg text-gray-600">
-              Visualisez les voitures disponibles autour de vous directement sur la carte.
+              {t('Visualisez les voitures disponibles autour de vous directement sur la carte')}
             </p>
             <dl className="mt-10 space-y-8 text-base text-gray-600">
               {featuresThree.map((feature, index) => (
                 <div key={index}>
-                  <dd className="mb-12">{feature.description}</dd>
+                  <dd className="mb-12">{t(feature.description)}</dd>
                   <a
                     href="#"
                     className="rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm hover:opacity-70  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
-                   Ouvrir la carte
+                   {t('Ouvrir la carte')}
                   </a>
                 </div>
               ))}
@@ -161,15 +162,14 @@ export default function Boxone() {
         <div className="mx-auto max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-16 sm:gap-y-20">
           <div className="lg:order-2">
             <h2 className="text-base font-semibold text-black-600">
-              Discutez avec les propriétaires des voitures
+              {t('Discutez avec les propriétaires des voitures')}
             </h2>
             <p className="mt-6 text-lg text-gray-600">
-              Utilisez notre système de messagerie intégré pour échanger facilement avec les propriétaires des voitures.
-            </p>
+{t('Utilisez notre système de messagerie intégré pour échanger facilement avec les propriétaires des voitures')}            </p>
             <dl className="mt-10 space-y-8 text-base text-gray-600">
               {featuresFour.map((feature, index) => (
                 <div key={index}>
-                  <dd className="mb-12">{feature.description}</dd>
+                  <dd className="mb-12">{t(feature.description)}</dd>
                   <a
   href="#"
   className="rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm 
@@ -177,7 +177,7 @@ export default function Boxone() {
              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white 
              active:bg-blue-500 active:border active:border-blue-600"
 >
-  Discutez avec les propriétaires
+  {t('Discutez avec les propriétaires')}
 </a>
 
                 </div>
@@ -199,16 +199,16 @@ export default function Boxone() {
         <div className="mx-auto max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-16 sm:gap-y-20">
           <div>
             <h2 className="text-base font-semibold text-black-600">
-              Notez votre expérience
+              {t('Notez votre expérience')}
             </h2>
             <p className="mt-6 text-lg text-gray-600">
-              Donnez votre avis pour aider notre communauté à grandir et à s'améliorer.
+              {t("Donnez votre avis pour aider notre communauté à grandir et à s'améliorer")}
             </p>
             <dl className="mt-10 space-y-8 text-base text-gray-600">
               {featuresFive.map((feature, index) => (
               
                 <div key={index}>
-                  <dd className="mb-12">{feature.description}</dd>
+                  <dd className="mb-12">{t(feature.description)}</dd>
                   <a
   href="#"
   className="rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm 
@@ -216,7 +216,7 @@ export default function Boxone() {
              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white 
              active:bg-blue-500 active:border active:border-blue-600"
 >
-  Notez votre expérience
+  {t('Notez votre expérience')}
 </a>
 
                 </div>
@@ -241,12 +241,12 @@ export default function Boxone() {
               Modifiez et envoyez vos documents officiels
             </h2>
             <p className="mt-6 text-lg text-gray-600">
-              Gérez vos documents comme votre permis de conduire et votre pièce d’identité en toute sécurité.
+              {t('Gérez vos documents comme votre permis de conduire et votre pièce d’identité en toute sécurité')}
             </p>
             <dl className="mt-10 space-y-8 text-base text-gray-600">
               {featuresSix.map((feature, index) => (
                 <div key={index}>
-                  <dd className="mb-12">{feature.description}</dd>
+                  <dd className="mb-12">{t(feature.description)}</dd>
                   <a
   href="#"
   className="rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm 
@@ -254,7 +254,7 @@ export default function Boxone() {
              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white 
              active:bg-blue-500 active:border active:border-blue-600"
 >
-  envoyez vos documents officiels
+  {t('envoyez vos documents officiels')}
 </a>
 
                 </div>
@@ -287,15 +287,15 @@ export default function Boxone() {
   </div>
   <div className="lg:order-1">
     <h2 className="text-base font-semibold text-black-600">
-      Gérez vos réservations et vos commandes
+      {t('Gérez vos réservations et vos commandes')}
     </h2>
     <p className="mt-6 text-lg text-gray-600">
-      Consultez et modifiez vos réservations en toute simplicité depuis votre tableau de bord.
+      {t('Consultez et modifiez vos réservations en toute simplicité depuis votre tableau de bord')}
     </p>
     <dl className="mt-10 space-y-8 text-base text-gray-600">
       {featuresOne.map((feature, index) => (
         <div key={index}>
-          <dd className="mb-12">{feature.description}</dd>
+          <dd className="mb-12">{t(feature.description)}</dd>
           <a
   href="#"
   className="rounded-full bg-[#32bb78] px-12 py-3.5 text-sm font-semibold text-white shadow-sm 
@@ -303,7 +303,7 @@ export default function Boxone() {
              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white 
              active:bg-blue-500 active:border active:border-blue-600"
 >
-  Gérez vos réservations
+  {t('Gérez vos réservations')}
 </a>
 
         </div>
